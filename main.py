@@ -1,9 +1,11 @@
+import os
+
 import openpyxl as openpyxl
 import pdfkit
-import os
+import win32api,win32print
 from PIL import ImageFont
-from jinja2 import Environment, FileSystemLoader
 from PyPDF2 import PdfFileReader, PdfFileWriter, PdfFileMerger
+from jinja2 import Environment, FileSystemLoader
 
 
 # 生成html模板
@@ -79,3 +81,6 @@ if __name__ == '__main__':
     # text = "hello"
     # width, height = font.getsize(text)
     # print(width, height)
+    printers = win32print.GetDefaultPrinter()
+    print(printers)
+
