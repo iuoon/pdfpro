@@ -20,7 +20,9 @@ class mainFrame(wx.Frame):
         self.SetBackgroundColour(wx.Colour(255, 255, 255))
         self.SetSize((600, 480))
         self.Center()
-
+        wx.StaticText(self, -1, u'设置纸张尺寸： 宽', pos=(10, 20), size=(100, -1), style=wx.ALIGN_RIGHT)
+        self.pageWidth = wx.TextCtrl(self, -1, '', pos=(110, 18), size=(30, -1), name='pageWidth', style=wx.TE_LEFT)
+        self.pageHeight = wx.TextCtrl(self, -1, '', pos=(160, 18), size=(30, -1), name='pageHeight', style=wx.TE_LEFT)
         # 生成html模板
     def generate_html(self,body):
         env = Environment(loader=FileSystemLoader('./'))
